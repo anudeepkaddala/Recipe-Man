@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
+
+</head>
+<body style="background-image: url('{{ url_for('static', filename='img3.jpg') }}'); background-repeat: no-repeat; background-size: cover;">
+    <div class="search-bar">
+        <form action="/predict" method="post">
+            <input type="text" id="dish_name" name="dish_name" required>
+            <button type="submit">Search new recipe</button>
+        </form>
+    </div>
+
+    <div class="result-container">
+        <h1>Enjoy the recipe:</h1>
+        <p>{{ result['cooking_instructions'] }}</p>
+
+        <h3>Suggestions in the Same Cuisine:</h3>
+        <ul>
+            {% for suggestion in result['suggestions_cuisine'] %}
+                <li>{{ suggestion }}</li>
+            {% endfor %}
+        </ul>
+
+        <h3>Healthy suggestions by calories in the same cuisine can be found in the following links:</h3>
+        <ul>
+            {% for suggestion in result['suggestions_diet'] %}
+                <li><a href="{{ suggestion }}" target="_blank">{{ suggestion }}</a></li>
+            {% endfor %}
+        </ul>
+
+        <!-- Display the image URL at the lower right corner -->
+        <img src="{{ result['recipe_url'] }}" class="recipe-image" alt="Recipe Image">
+    </div>
+
+    <div class="navigation-options">
+        <a href="/">Go Back to Home</a>
+    </div>
+
+</body>
+</html>

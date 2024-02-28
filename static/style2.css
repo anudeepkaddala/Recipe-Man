@@ -1,0 +1,85 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('img3.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    opacity: 0.9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    color: #ab1616;
+    margin-bottom: 15px;
+
+}
+
+h3 {
+    color: #333;
+}
+
+p {
+    line-height: 2;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 12px;
+}
+
+a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.search-bar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.result-container {
+    margin-top: 60px;
+}
+
+.navigation-options {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.recipe-image {
+    max-width: 280px; /* Set the maximum width as per your preference */
+    max-height: 280px; /* Set the maximum height as per your preference */
+    position: fixed;
+    bottom: 40px; /* Adjust the distance from the bottom */
+    right: 30px; /* Adjust the distance from the right */
+}
+
+.recipe-image img {
+    max-width: 280px; /* Adjust the maximum width as needed */
+    max-height: 280px; /* Adjust the maximum height as needed */
+    position: fixed;
+    bottom: 40px; /* Adjust the distance from the bottom */
+    right: 30px; /* Adjust the distance from the right */
+}

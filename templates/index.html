@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RecipeMan</title>
+    <style>
+        body {
+            background-image: url("{{ url_for('static', filename='bgimageforindex.jpg') }}");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 0;
+            font-family: 'YourFont', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        header {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label {
+            color: #fff;
+        }
+
+        input[type="text"], button {
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid #fff;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.7);
+            color: #000;
+        }
+
+        button {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>RecipeMan.</header>
+
+    <form action="/predict" method="post">
+        <label for="dish_name">Enter the name of the dish:</label>
+        <input type="text" id="dish_name" name="dish_name" required>
+        <button type="submit">Get Recipe</button>
+    </form>
+</body>
+</html>
