@@ -12,6 +12,7 @@ import pandas as pd
 from fuzzywuzzy import process
 from googlesearch import search
 import nltk
+import os
 nltk.download('stopwords')
 nltk.download('punkt')
 
@@ -108,4 +109,5 @@ def predict():
                                suggestions_diet=suggestions_diet)
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)), debug=True)
+
